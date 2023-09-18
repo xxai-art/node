@@ -15,4 +15,4 @@ export default dump = (li, indent=0)=>
   else
     for [k,v] from Object.entries(li)
       r.push '\n'+pad+k+':'+dump(v,indent+2)
-  r.join('\n')
+  r.join('')
