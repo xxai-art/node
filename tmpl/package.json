@@ -4,7 +4,7 @@
   "repository": "https://github.com/xxai-art/node.git",
   "homepage": "https://github.com/xxai-art/node/tree/main/tmpl",
   "author": "xxai.art@gmail.com",
-  "license": "Apache-2.0",
+  "license": "BSL1.1 ",
   "exports": {
     ".": "./lib/index.js",
     "./*": "./lib/*"
