@@ -1,6 +1,6 @@
 {
   "name": "@xxai/wasm",
-  "version": "0.0.42",
+  "version": "0.0.43",
   "main": "_.js",
   "repository": "https://github.com/xxai-art/node.git",
   "homepage": "https://github.com/xxai-art/node/tree/main/binmap",
