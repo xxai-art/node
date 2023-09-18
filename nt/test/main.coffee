@@ -4,10 +4,12 @@
   @xxai/nt/dump.js
 
 li = load '''
-# test
+# t1
 a:
+  # t2
   b:
     c: 1
+    # t3
     d: 2
   x: 3
   y:
