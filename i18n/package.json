@@ -27,7 +27,7 @@
     "@w5/write": "^0.0.1",
     "@w5/xxhash3-wasm": "^0.0.4",
     "@xxai/cache": "^0.0.1",
-    "@xxai/nt": "^0.0.4",
+    "@xxai/nt": "^0.0.6",
     "@xxai/vbyte": "^0.0.1"
   }
 }
