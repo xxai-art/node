@@ -1,7 +1,7 @@
 #!/usr/bin/env coffee
 
 > @xxai/nt/load.js
-
+  @xxai/nt/dump.js
 
 li = load '''
 # test
@@ -18,10 +18,20 @@ e:
     > 123
     > 456
 '''
-console.log li
+console.log dump li
 
-li = load '''
-- a
-- b
-'''
-console.log li
+# li = load '''
+# - a
+# - b
+# '''
+# console.log dump li
+#
+# li = load '''
+# a:
+#   > 123
+#   > 235
+# b:
+#   > 123
+#   > 235
+# '''
+# console.log dump li

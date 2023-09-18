@@ -1,17 +1,18 @@
 #!/usr/bin/env coffee
 
-> zx/globals:
-  @w5/uridir
-
-< default main = =>
-  ROOT = uridir(import.meta)
-  cd ROOT
-
-  await $"ls #{ROOT}"
-  await $'pwd'
-  return
-
-if process.argv[1] == decodeURI (new URL(import.meta.url)).pathname
-  await main()
-  process.exit()
-
+export default dump = (li, indent=0)=>
+  pad = ''.padEnd indent
+  r = []
+  if Array.isArray(li)
+    for i from li
+      r.push '- '+dump(i,indent+2)
+  else if li.constructor == String
+    if li.includes '\n'
+      prefix = '\n'+pad+'> '
+      return prefix+li.split('\n').join(prefix)
+    else
+      return li
+  else
+    for [k,v] from Object.entries(li)
+      r.push pad+k+':'+dump(v,indent+2)
+  r.join('\n')
