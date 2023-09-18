@@ -1,6 +1,6 @@
 #!/usr/bin/env coffee
 
-> @w5/i18n
+> @xxai/i18n
 #   @w5/uridir
 #   path > join
 

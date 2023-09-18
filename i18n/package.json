@@ -14,5 +14,9 @@
   ],
   "devDependencies": {},
   "scripts": {},
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@w5/tran": "^0.0.6",
+    "@w5/yml": "^0.0.2"
+  }
 }
