@@ -8,11 +8,8 @@
   ./toFrom.js
   ./yml.js
   fs > statSync
+  ./IsChange.js
 
-CACHE_DIR = process.env.CACHE_DIR or join(
-  homedir()
-  '.cache/xxai/i18n'
-)
 
 < (root)=>
   {i18n} = Yml(root)
@@ -20,10 +17,6 @@ CACHE_DIR = process.env.CACHE_DIR or join(
 
 
   for dir from i18n.yml
-    cache_path = join(
-      CACHE_DIR
-      Buffer.from(hash128(join(root, dir))).toString('base64url')
-    )
 
     pwd = join(root,dir)
     y = Yml(pwd)
