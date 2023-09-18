@@ -6,4 +6,3 @@
 
 # ROOT = uridir(import.meta)
 
-console.log await i18n 123
