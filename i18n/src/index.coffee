@@ -34,6 +34,7 @@ CACHE_DIR = process.env.CACHE_DIR or join(
     for [to_lang,from_lang] from to_from
        ymlT(
          to_lang
+         y[to_lang] or {}
          from_lang
          fromYml(from_lang)
        )
