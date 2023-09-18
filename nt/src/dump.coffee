@@ -5,7 +5,7 @@ export default dump = (li, indent=0)=>
   r = []
   if Array.isArray(li)
     for i from li
-      r.push '- '+dump(i,indent+2)
+      r.push '\n'+pad+'- '+dump(i,indent+2)
   else if li.constructor == String
     if li.includes '\n'
       prefix = '\n'+pad+'> '
@@ -14,5 +14,5 @@ export default dump = (li, indent=0)=>
       return li
   else
     for [k,v] from Object.entries(li)
-      r.push pad+k+':'+dump(v,indent+2)
+      r.push '\n'+pad+k+':'+dump(v,indent+2)
   r.join('\n')
