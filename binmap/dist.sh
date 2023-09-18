@@ -8,7 +8,7 @@ git add -A
 git pull
 
 cd $DIR/pkg
-jq '.name="@xxai/wasm"' package.json | sponge package.json
+jq '.name="@xxai/binmap"' package.json | sponge package.json
 version=$(cat package.json | jq -r '.version')
 npm version patch
 
