@@ -3,24 +3,30 @@
 > @xxai/nt/load.js
   @xxai/nt/dump.js
 
+# li = load '''
+# # t1
+# a:
+#   # t2
+#   b:
+#     c: 1
+#     # t3
+#     d: 2
+#   x: 3
+#   y:
+#     - m
+#     - n
+# e:
+#   f:
+#     > 123
+#     > 456
+# '''
+# console.log dump li
+
 li = load '''
-# t1
-a:
-  # t2
-  b:
-    c: 1
-    # t3
-    d: 2
-  x: 3
-  y:
-    - m
-    - n
-e:
-  f:
-    > 123
-    > 456
+en:
+zh: en
 '''
-console.log dump li
+console.log li
 
 # li = load '''
 # - a

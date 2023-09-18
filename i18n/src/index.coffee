@@ -8,34 +8,32 @@
   fs > statSync
   ./IsChange.js
 
-EXT_YML = '.nt'
+EXT_NT = '.nt'
 
-< (root)=>
-  {i18n} = Nt(root)
-  to_from = toFrom i18n.lang
+< (pwd)=>
+  {i18n} = Nt(pwd)
+  console.log i18n
+  to_from = toFrom i18n
 
+  [isChange,changeSave] = IsChange(pwd)
 
-  for dir from i18n.nt
+  y = Nt(pwd)
+  fromNt = cache (name)=>
+    y[name]
 
-    pwd = join(root,dir)
-    [isChange,changeSave] = IsChange(pwd)
-
-    y = Nt(pwd)
-    fromNt = cache (name)=>
-      y[name]
-
-    ntT = nt.bind(0,pwd)
-    changed = new Set
-    for [to_lang,from_lang] from to_from
-      to_lang_nt = to_lang + EXT_YML
-      from_lang_nt = from_lang + EXT_YML
-      if isChange(from_lang_nt) or isChange(to_lang_nt)
-        await ntT(
-          to_lang
-          y[to_lang] or {}
-          from_lang
-          fromNt(from_lang)
-        )
-        changed.add to_lang
-    changeSave [...changed].map (i)=>i+EXT_YML
+  ntT = nt.bind(0,pwd)
+  changed = new Set
+  for [to_lang,from_lang] from to_from
+    console.log to_lang, from_lang
+  #   to_lang_nt = to_lang + EXT_NT
+  #   from_lang_nt = from_lang + EXT_NT
+  #   if isChange(from_lang_nt) or isChange(to_lang_nt)
+  #     await ntT(
+  #       to_lang
+  #       y[to_lang] or {}
+  #       from_lang
+  #       fromNt(from_lang)
+  #     )
+  #     changed.add to_lang
+  # changeSave [...changed].map (i)=>i+EXT_NT
   return

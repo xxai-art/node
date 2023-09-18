@@ -33,8 +33,8 @@ dict = (up, li)=>
   if ~ pos
     if pos == key.length - 1
       li1 = li[1]
+      key = key.slice(0,-1)
       if li1.length > 0
-        key = key.slice(0,-1)
         sub = li1[0][0][1]
         if sub.startsWith '>'
           up[key] = strli(li1)
