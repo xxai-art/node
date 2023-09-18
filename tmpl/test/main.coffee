@@ -1,6 +1,6 @@
 #!/usr/bin/env coffee
 
-> @w5/tmpl
+> @xxai/tmpl
 #   @w5/uridir
 #   path > join
 
