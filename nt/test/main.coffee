@@ -1,9 +1,9 @@
 #!/usr/bin/env coffee
 
-> @xxai/nt/load.js
-  @xxai/nt/dump.js
+> @xxai/nt/loads.js
+  @xxai/nt/dumps.js
 
-# li = load '''
+# li = loads '''
 # # t1
 # a:
 #   # t2
@@ -20,21 +20,21 @@
 #     > 123
 #     > 456
 # '''
-# console.log dump li
+# console.log dumps li
 
-li = load '''
+li = loads '''
 en:
 zh: en
 '''
 console.log li
 
-# li = load '''
+# li = loads '''
 # - a
 # - b
 # '''
-# console.log dump li
+# console.log dumps li
 #
-# li = load '''
+# li = loads '''
 # a:
 #   > 123
 #   > 235
@@ -42,4 +42,4 @@ console.log li
 #   > 123
 #   > 235
 # '''
-# console.log dump li
+# console.log dumps li
