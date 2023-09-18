@@ -7,6 +7,7 @@
   @xxai/cache
   ./toFrom.js
   ./yml.js
+  fs > statSync
 
 CACHE_DIR = process.env.CACHE_DIR or join(
   homedir()
@@ -30,13 +31,14 @@ CACHE_DIR = process.env.CACHE_DIR or join(
       y[name]
 
     ymlT = yml.bind(0,pwd)
-    # todo check from_lang is change
     for [to_lang,from_lang] from to_from
-       ymlT(
-         to_lang
-         y[to_lang] or {}
-         from_lang
-         fromYml(from_lang)
-       )
+      fstat = statSync join pwd, from_lang+'.yml'
+      console.log fstat
+      await ymlT(
+        to_lang
+        y[to_lang] or {}
+        from_lang
+        fromYml(from_lang)
+      )
     # save from_lang is mtime and size
   return

@@ -1,6 +1,12 @@
 # @xxai/i18n
 
-修改译文，重翻译，如果原文不变，不会影响修改
+* 可以设置代理
+
+```
+export https_proxy=http://127.0.0.1:7890
+```
+
+* 修改译文，重翻译，如果原文不变，不会影响修改
 
 [test/main.coffee](./test/main.coffee) :
 
