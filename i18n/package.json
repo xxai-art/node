@@ -1,6 +1,6 @@
 {
   "name": "@xxai/i18n",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "repository": "https://github.com/xxai-art/node.git",
   "homepage": "https://github.com/xxai-art/node/tree/main/i18n",
   "author": "xxai.art@gmail.com",
@@ -23,6 +23,7 @@
     "@w5/tran": "^0.0.6",
     "@w5/utf8": "^0.0.3",
     "@w5/xxhash3-wasm": "^0.0.4",
-    "@w5/yml": "^0.0.2"
+    "@w5/yml": "^0.0.2",
+    "@xxai/cache": "^0.0.1"
   }
 }

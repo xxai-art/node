@@ -4,6 +4,7 @@
   os > homedir
   path > join
   @w5/xxhash3-wasm > hash128
+  @xxai/cache
   ./toFrom.js
 
 
@@ -23,9 +24,11 @@ CACHE_DIR = process.env.CACHE_DIR or join(
       Buffer.from(hash128(join(root, dir))).toString('base64url')
     )
 
-    from_cache = new Map
+    fromYml = cache (name)=>
+      Yml[name]
+
     # todo check from_lang is change
     for [to_lang,from_lang] from to_from
-      console.log from_lang
+      console.log fromYml(from_lang)
     # save from_lang is mtime and size
   return
