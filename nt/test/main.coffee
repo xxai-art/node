@@ -1,9 +1,9 @@
 #!/usr/bin/env coffee
 
-> @xxai/nt
+> @xxai/nt/load.js
 
 
-li = nt '''
+li = load '''
 # test
 a:
   b:
@@ -20,7 +20,7 @@ e:
 '''
 console.log li
 
-li = nt '''
+li = load '''
 - a
 - b
 '''
