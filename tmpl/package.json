@@ -1,0 +1,18 @@
+{
+  "name": "@xxai/tmpl",
+  "version": "0.0.0",
+  "repository": "https://github.com/xxai-art/node.git",
+  "homepage": "https://github.com/xxai-art/node/tree/main/tmpl",
+  "author": "xxai.art@gmail.com",
+  "license": "Apache-2.0",
+  "exports": {
+    ".": "./lib/index.js",
+    "./*": "./lib/*"
+  },
+  "files": [
+    "lib/*"
+  ],
+  "devDependencies": {},
+  "scripts": {},
+  "type": "module"
+}
