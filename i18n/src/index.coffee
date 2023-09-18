@@ -1,43 +1,31 @@
 #!/usr/bin/env coffee
 
 > @w5/yml/Yml
-  @w5/lang
-
-langFrom = (lang_li)=>
-  s = new Map
-  for [k,li] from Object.entries lang_li
-    if li
-      for v from li.split ' '
-        s.set v,k
-    else
-      s.set '',k
-
-  to_from = []
-  + all
-  exist = new Set
-  for [to_lang,from_lang] from s.entries()
-    exist.add from_lang
-    if to_lang
-      to_from.push [to_lang, from_lang]
-      exist.add to_lang
-    else
-      all = from_lang
-
-  if all
-    for [i] from lang
-      if not exist.has i
-        to_from.push [i,all]
-
-  to_from
+  os > homedir
+  path > join
+  @w5/xxhash3-wasm > hash128
+  ./toFrom.js
 
 
+CACHE_DIR = process.env.CACHE_DIR or join(
+  homedir()
+  '.cache/xxai/i18n'
+)
 
 < (root)=>
   {i18n} = Yml(root)
-  to_from = langFrom i18n.lang
+  to_from = toFrom i18n.lang
+
 
   for dir from i18n.yml
-    console.log dir
-  # for [code] from lang
-  #   console.log code
+    cache_path = join(
+      CACHE_DIR
+      Buffer.from(hash128(join(root, dir))).toString('base64url')
+    )
+
+    from_cache = new Map
+    # todo check from_lang is change
+    for [to_lang,from_lang] from to_from
+      console.log from_lang
+    # save from_lang is mtime and size
   return

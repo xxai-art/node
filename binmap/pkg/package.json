@@ -1,0 +1,17 @@
+{
+  "name": "@xxai/wasm",
+  "version": "0.0.42",
+  "main": "_.js",
+  "repository": "https://github.com/xxai-art/node.git",
+  "homepage": "https://github.com/xxai-art/node/tree/main/binmap",
+  "license": "Apache-2.0",
+  "author": "xxai.art@gmail.com",
+  "exports": {
+    ".": "./_.js",
+    "./*": "./*"
+  },
+  "files": [
+    "*.wasm",
+    "*.ts"
+  ]
+}
