@@ -1,4 +1,4 @@
-> @w5/walk
+#!/usr/bin/env coffee
 
-< (dir)=>
-  dir
+< default main = =>
+  return
