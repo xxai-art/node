@@ -11,6 +11,7 @@
 EXT_NT = '.nt'
 
 < (pwd)=>
+  console.log pwd
   {i18n} = Nt(pwd)
   console.log i18n
   to_from = toFrom i18n

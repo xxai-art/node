@@ -55,5 +55,5 @@ console.log li
 output :
 
 ```
-{ en: '', zh: 'en' }
+./out.txt
 ```
