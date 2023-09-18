@@ -1,6 +1,6 @@
 {
   "name": "@xxai/binmap",
-  "version": "0.0.44",
+  "version": "0.0.1",
   "main": "_.js",
   "repository": "https://github.com/xxai-art/node.git",
   "homepage": "https://github.com/xxai-art/node/tree/main/binmap",
