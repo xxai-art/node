@@ -1,9 +1,11 @@
 #!/usr/bin/env coffee
 
 > @xxai/cache
-#   @w5/uridir
-#   path > join
 
-# ROOT = uridir(import.meta)
+test = cache (a)=>
+  console.log 'run test',a
+  a+2
 
-console.log await cache 123
+
+console.log test 123
+console.log test 123

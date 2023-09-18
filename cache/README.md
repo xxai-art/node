@@ -1,23 +1,27 @@
 [‼️]: ✏️README.mdt
 
-# @w5/cache
+# @xxai/cache
 
 [test/main.coffee](./test/main.coffee) :
 
 ```coffee
 #!/usr/bin/env coffee
 
-> @w5/cache
-#   @w5/uridir
-#   path > join
+> @xxai/cache
 
-# ROOT = uridir(import.meta)
+test = cache (a)=>
+  console.log 'run test',a
+  a+2
 
-console.log await cache 123
+
+console.log test 123
+console.log test 123
 ```
 
 output :
 
 ```
-123
+run test 123
+125
+125
 ```
