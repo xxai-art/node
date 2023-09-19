@@ -17,6 +17,6 @@
   "type": "module",
   "dependencies": {
     "@w5/msgpack": "^0.0.2",
-    "@xxai/binmap": "^0.0.1"
+    "@xxai/binmap": "^0.0.2"
   }
 }
