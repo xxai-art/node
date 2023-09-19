@@ -1,8 +1,7 @@
 use https_proxy http://127.0.0.1:7890
-[]
-# test
+# Test
 
-## code snippet
+## Code Snippet
 
 `CoffeeScript` code
 
@@ -38,11 +37,11 @@ HTML
 
 [Markdown documentation](https://github.com/xxai-art/xxai-art-md)
 
-## picture
+## Picture
 
 ![xxAI.Art Brand Identity](https://raw.githubusercontent.com/xxai-art/web/main/file/svg/logo.svg)
 
-## indentation
+## Indentation
 
 Mr. Lu Xun wrote in "Self-titled Portrait":
 

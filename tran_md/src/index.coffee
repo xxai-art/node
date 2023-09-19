@@ -2,6 +2,7 @@
   @w5/tran > tranHtm
   @w5/md2htm
   @w5/htm2md
+  @xxai/title-case
   @w5/utf8/utf8d.js
   @w5/utf8/utf8e.js
   @xxai/replace_n
@@ -40,10 +41,13 @@
         to_tran_pos.push pos
         to_tran_hash.push hash
 
-    console.log to_tran_htm
     n = 0
     for await i from tranHtm(to_tran_htm,to_lang, from_lang)
-      txt = to_tran_prefix[n] + htm2md i
+      p = to_tran_prefix[n]
+      i = htm2md i
+      if p.charAt(0) == '#'
+        i = TitleCase i
+      txt = p + i
       mset to_tran_hash[n], txt
       md[to_tran_pos[n]] = txt
       n++
