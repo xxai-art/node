@@ -36,6 +36,7 @@ export default merge = (txt) =>
     # 去掉行尾的空格
     line = line.trimEnd()
     trimStarted = line.trimStart()
+    line += '\n'
 
     # 判断当前行是否为代码块或注释块的开始或结束，并更新状态
     if trimStarted.startsWith '```'
@@ -44,7 +45,7 @@ export default merge = (txt) =>
         merged.push buffer + line
         buffer = ''
       else
-        buffer += line + '\n'
+        buffer += line
       is_code_block = !is_code_block
       continue
     else if trimStarted.startsWith '<!--'
@@ -54,10 +55,9 @@ export default merge = (txt) =>
         merged.push line.slice(0,p)
         line = line.slice p
       else
-        buffer += line + '\n'
+        buffer += line
         is_comment_block = true
         continue
-
     if is_code_block or is_comment_block
       buffer += line
       if is_comment_block
@@ -67,7 +67,6 @@ export default merge = (txt) =>
           merged.push buffer
           buffer = ''
           continue
-      buffer += '\n'
     else if not line.startsWith('[#]: ')
       if not trimStarted and not merged.length
         continue

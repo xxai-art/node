@@ -8,7 +8,7 @@
 
 < (md, code_pos_li, mget, mset, to_lang, from_lang)=>
   for md_code_pos from code_pos_li
-    code = md[md_code_pos].split('\n')
+    code = md[md_code_pos].trimEnd().split('\n')
     lang = code[0].slice(3)
     if lang of comment
       code0 = code[0]+'\n'
@@ -34,5 +34,5 @@
         code_li[to_tran_pos[n]] = i
         mset to_tran_hash[n], i
         ++n
-      md[md_code_pos] = code0+code_li.join('')+code_1
+      md[md_code_pos] = code0+code_li.join('')+code_1+'\n'
   return

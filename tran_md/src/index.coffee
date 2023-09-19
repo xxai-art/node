@@ -42,7 +42,7 @@
       hash = hash128 txt
       pre = mget hash
       if pre
-        md[pos] = utf8d pre
+        md[pos] = utf8d(pre)+'\n'
       else
         [p, t] = prefix txt
         to_tran_prefix.push p
@@ -58,8 +58,8 @@
         i = TitleCase i
       txt = p + i
       mset to_tran_hash[n], txt
-      md[to_tran_pos[n]] = txt
+      md[to_tran_pos[n]] = txt+'\n'
       n++
 
     msave()
-    md.join('\n')
+    md.join('')
