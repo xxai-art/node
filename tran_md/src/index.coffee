@@ -1,10 +1,13 @@
 > @w5/read
-  @w5/tran > tranTxt
+  @w5/tran > tranHtm
   @w5/md2htm
   @w5/htm2md
+  @w5/utf8/utf8d.js
+  @w5/utf8/utf8e.js
   @xxai/replace_n
   ./merge.js
   ./pick.js
+  ./prefix.js
   @xxai/cache_map:CacheMap
   @w5/xxhash3-wasm > hash128
 
@@ -16,23 +19,38 @@
     pos_li
   ] = merge ReplaceN(md)
 
-  (cache_fp) =>
+  (to_lang, from_lang, cache_fp) =>
     [mget,mset,msave]=  CacheMap cache_fp
 
     traned = []
+
+    to_tran_hash = []
+    to_tran_htm = []
     to_tran_pos = []
+    to_tran_prefix = []
+
     for txt, n in pick(md,pos_li)
-      p = pos_li[n]
-      pre = mget hash128 txt
+      pos = pos_li[n]
+      hash = hash128 txt
+      pre = mget hash
       if pre
-        traned[p] = pre
+        traned[pos] = utf8d pre
       else
-        to_tran_pos.push p
+        [p, t] = prefix txt
+        to_tran_prefix.push p
+        to_tran_htm.push (await md2htm t).trimEnd()
+        to_tran_pos.push pos
+        to_tran_hash.push hash
 
-    to_tran = pick(md, to_tran_pos)
-
-    console.log to_tran
-
+    console.log to_tran_htm
+    n = 0
+    for await i from tranHtm(to_tran_htm,to_lang, from_lang)
+      txt = to_tran_prefix[n] + htm2md i
+      mset to_tran_hash[n], txt
+      traned[to_tran_pos[n]] = utf8e txt
+      n++
 
     msave()
+    console.log traned
+    # traned.join('')
     return

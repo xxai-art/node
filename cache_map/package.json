@@ -1,6 +1,6 @@
 {
   "name": "@xxai/cache_map",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "repository": "https://github.com/xxai-art/node.git",
   "homepage": "https://github.com/xxai-art/node/tree/main/cache_map",
   "author": "xxai.art@gmail.com",
@@ -17,6 +17,7 @@
   "type": "module",
   "dependencies": {
     "@w5/binmap": "^0.0.5",
+    "@w5/utf8": "^0.0.3",
     "@w5/write": "^0.0.1"
   }
 }
