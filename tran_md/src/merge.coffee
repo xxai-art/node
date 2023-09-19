@@ -38,38 +38,42 @@ export default merge = (txt) =>
 
     # 判断当前行是否为代码块或注释块的开始或结束，并更新状态
     if trimStarted.startsWith '```'
-        if is_code_block
-          merged.push buffer + line
-          buffer = ''
-        else
-          buffer += line + '\n'
-        is_code_block = !is_code_block
+      if is_code_block
+        merged.push buffer + line
+        buffer = ''
+      else
+        buffer += line + '\n'
+      is_code_block = !is_code_block
+      continue
     else if trimStarted.startsWith '<!--'
       p = line.indexOf '-->',3
       if p > 0
-        merged.push line
+        p += 3
+        merged.push line.slice(0,p)
+        line = line.slice p
       else
         buffer += line + '\n'
         is_comment_block = true
-    else
-      if is_code_block or is_comment_block
-        buffer += line
-        if is_comment_block
-          p = line.indexOf '-->'
-          if ~p
-            is_comment_block = false
-            merged.push buffer
-            buffer = ''
-            continue
-        buffer += '\n'
-      else if not line.startsWith('[#]: ')
-        if not trimStarted and not merged.length
+        continue
+
+    if is_code_block or is_comment_block
+      buffer += line
+      if is_comment_block
+        p = line.indexOf '-->'
+        if ~p
+          is_comment_block = false
+          merged.push buffer
+          buffer = ''
           continue
-        if not (
-          line.startsWith('<') and line.endsWith('>')
-        ) and trimStarted
-          unmerged_line_numbers.push merged.length
-        merged.push line
+      buffer += '\n'
+    else if not line.startsWith('[#]: ')
+      if not trimStarted and not merged.length
+        continue
+      if not (
+        line.startsWith('<') and line.endsWith('>')
+      ) and trimStarted
+        unmerged_line_numbers.push merged.length
+      merged.push line
 
   # 返回合并后的数组及未合并行的行号数组
   return [merged, unmerged_line_numbers]
