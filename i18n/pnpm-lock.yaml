@@ -36,8 +36,8 @@ dependencies:
     specifier: ^0.0.1
     version: 0.0.1
   '@xxai/cache_map':
-    specifier: ^0.0.5
-    version: 0.0.5
+    specifier: ^0.0.7
+    version: 0.0.7
   '@xxai/is-change':
     specifier: ^0.0.4
     version: 0.0.4
@@ -103,10 +103,6 @@ packages:
 
   /@w5/binmap@0.0.3:
     resolution: {integrity: sha512-sOmsDXx4WjOdcKsioletEmYd96dfOPgNYVzhLaIT81xBPuAdzCyeNC4Zs9PAl3WXyqLNFKctNdOLA2y73prEcw==}
-    dev: false
-
-  /@w5/binmap@0.0.4:
-    resolution: {integrity: sha512-fGibGSemHhQoJMja3t0lQfo3muUAYeGGy4zMHeLuPxs82AOpBsTXTHfOLoyYn9tLoZjrnUstpwKRtBFA9Dep2w==}
     dev: false
 
   /@w5/binmap@0.0.5:
@@ -204,10 +200,10 @@ packages:
       '@xxai/binmap': 0.0.1
     dev: false
 
-  /@xxai/cache_map@0.0.5:
-    resolution: {integrity: sha512-G7C+xlEfPGmKYXLirh6JoFEwQ8CKUYTeFEMd4NAeo9KW+5SoYoSHgBwFijziird99zRr9yopj2MMlop2h3zIUg==}
+  /@xxai/cache_map@0.0.7:
+    resolution: {integrity: sha512-fEWyV5l2KIJ2Ws6yFmQwp8jMSt4YwyXRfJFHyfi5h+/mBKG3kgBucYs1Q52T/dbwCGyRlV3PBrnO9vmfmWAIdg==}
     dependencies:
-      '@w5/binmap': 0.0.4
+      '@w5/binmap': 0.0.5
       '@w5/write': 0.0.1
     dev: false
 

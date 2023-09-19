@@ -6,7 +6,7 @@
   # 每次都重建，这样可以淘汰不存在的key
   m = new BinMap
   if existsSync fp
-    prem = BinMap.load readFileSync cache_fp
+    prem = BinMap.load readFileSync fp
   else
     prem = m
 
