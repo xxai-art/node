@@ -1,17 +1,25 @@
 > @w5/tran > tranTxt
   @w5/xxhash3-wasm > hash128
+  @xxai/cache
   @w5/binmap > BinMap
-  @xxai/nt/dump
   @w5/write
   @w5/u8 > u8eq
+  @xxai/nt/dump.js
+  @xxai/nt/load.js
   path > join
   fs > readFileSync existsSync
 
-< (dir, to_lang, to_nt, from_lang, from_nt)=>
+cacheNt = cache load
+
+< (dir, relpath, to_lang, from_lang)=>
+
+  from_nt = cacheNt join dir, from_lang, relpath
+
   if not from_nt
     return
 
-  cache_fp = join dir,'.i18n',from_lang, to_lang
+  to_nt = load(join dir, to_lang, relpath) or {}
+  cache_fp = join dir,'.i18n', from_lang+'!'+to_lang, relpath
 
   if existsSync cache_fp
     prem = BinMap.load readFileSync cache_fp
@@ -43,7 +51,7 @@
       ++n
 
     dump(
-      join dir, to_lang+'.nt'
+      join dir, to_lang, relpath
       to_nt
     )
     write(
