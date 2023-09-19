@@ -15,13 +15,13 @@ update = (fp)=>
   run = (cmd)=>
     $"sh -c 'cd #{dir} && #{cmd.split(' ')}'"
 
-  await $"sh -c 'cd #{dir} && git add -u && git commit -m. || true'"
-  await run 'git pull origin main'
+  # await $"sh -c 'cd #{dir} && git add -u && git commit -m. || true'"
+  # await run 'git pull origin main'
   await run 'ncu -u'
   await run 'ni'
-  await run 'git add -u'
-  await $"sh -c 'cd #{dir} && git commit -m update\\ package.json || true'"
-  await run 'git push'
+  # await run 'git add -u'
+  # await $"sh -c 'cd #{dir} && git commit -m update\\ package.json || true'"
+  # await run 'git push'
   return
 
 POOL = Pool 8

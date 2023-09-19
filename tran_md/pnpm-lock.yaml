@@ -21,8 +21,8 @@ dependencies:
     specifier: ^0.0.3
     version: 0.0.3
   '@w5/xxhash3-wasm':
-    specifier: ^0.0.4
-    version: 0.0.4
+    specifier: ^0.0.6
+    version: 0.0.6
   '@xxai/cache_map':
     specifier: ^0.0.10
     version: 0.0.10
@@ -162,8 +162,8 @@ packages:
     resolution: {integrity: sha512-VyQXX2C3yRqfS7D5B+yCcsR1tvzZ1DzPLi5kugBOe/EeL+LOD3ftFamfik7wQr2TG7XQ7VF0snUpqVLaytwfOA==}
     dev: false
 
-  /@w5/xxhash3-wasm@0.0.4:
-    resolution: {integrity: sha512-krE6ziY9vviJ8rJlYRiODXGR+f4j+GfawVPjeHRY2kmNSTYd1+av8NDzElKbmtiaa5O2laBr6j1Hv0es8RuWlQ==}
+  /@w5/xxhash3-wasm@0.0.6:
+    resolution: {integrity: sha512-mP+pfMV6StrN3FLHbPydwjmB9aTllAmtbcZ7ZeLW/2hzkZ4Q/58xQbxgdwDvmaN8HNXZqjE6x9qWmhUxbvjG5Q==}
     dev: false
 
   /@xxai/cache_map@0.0.10:
