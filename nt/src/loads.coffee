@@ -35,7 +35,7 @@ dict = (up, li)=>
       key = key.slice(0,-1)
       if li1.length > 0
         sub = li1[0][0][1]
-        if sub.startsWith '>'
+        if sub.startsWith '> '
           up[key] = strli(li1)
         else
           if sub.startsWith '-'

@@ -37,35 +37,37 @@ export default merge = (txt) =>
     trimStarted = line.trimStart()
 
     # 判断当前行是否为代码块或注释块的开始或结束，并更新状态
-    switch trimStarted
-      when '```'
+    if trimStarted.startsWith '```'
         if is_code_block
           merged.push buffer + line
           buffer = ''
         else
           buffer += line + '\n'
         is_code_block = !is_code_block
-
-      when '<!--'
-        is_comment_block = true
-        buffer += line + '\n'
-
-      when '-->'
-        is_comment_block = false
-        merged.push buffer + line
-        buffer = ''
-
+    else if trimStarted.startsWith '<!--'
+      p = line.indexOf '-->',3
+      buffer += line + '\n'
+      if p > 0
+        merged.push buffer
       else
-        if is_code_block or is_comment_block
-          buffer += line + '\n'
-        else if not line.startsWith('[‼️]: ')
-          if not trimStarted and not merged.length
-            continue
-          if not (
-            line.startsWith('<') and line.endsWith('>')
-          ) and trimStarted and not line.startsWith('![')
-            unmerged_line_numbers.push merged.length
-          merged.push line
+        is_comment_block = true
+    else
+      if is_code_block or is_comment_block
+        buffer += line + '\n'
+        if is_comment_block
+          p = line.indexOf '-->'
+          if p > 0
+            is_comment_block = false
+          merged.push buffer + line
+          buffer = ''
+      else if not line.startsWith('[!]: ')
+        if not trimStarted and not merged.length
+          continue
+        if not (
+          line.startsWith('<') and line.endsWith('>')
+        ) and trimStarted and not line.startsWith('![')
+          unmerged_line_numbers.push merged.length
+        merged.push line
 
   # 返回合并后的数组及未合并行的行号数组
   return [merged, unmerged_line_numbers]
