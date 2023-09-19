@@ -30,7 +30,11 @@
     to_tran_pos = []
     to_tran_prefix = []
 
-    await tranComment md, code_pos_li, mget, mset
+    await tranComment(
+      md, code_pos_li, mget, mset
+      to_lang
+      from_lang
+    )
 
     for txt, n in pick(md,pos_li)
       pos = pos_li[n]
