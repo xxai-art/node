@@ -9,7 +9,7 @@
   fs > statSync readFileSync existsSync
   path > join
 
-< (dir, cache_dir)=>
+< (cache_dir, dir)=>
   cache_path = join(
     cache_dir
     Buffer.from(hash128(dir)).toString('base64url')
