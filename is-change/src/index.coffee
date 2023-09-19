@@ -36,7 +36,7 @@
         m.set key, size_mtime
 
         # 确保设置了，不然会被清掉
-        pre_hash = pre_hahs_map.get(key)
+        pre_hash = pre_hash_map.get(key)
         if pre_hash
           hash_map.set key, pre_hash
 
