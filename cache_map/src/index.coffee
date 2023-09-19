@@ -3,6 +3,11 @@
   @w5/utf8/utf8e.js
   fs > existsSync readFileSync
 
+encode = (k)=>
+  if k.constructor == String
+    k = utf8e k
+  k
+
 < (fp)=>
   # 每次都重建，这样可以淘汰不存在的key
   m = new BinMap
@@ -13,8 +18,7 @@
 
   [
     (k)=> # get
-      if k.constructor == String
-        k = utf8e k
+      k = encode k
       if prem.has(k)
         v = prem.get k
         m.set k,v
@@ -23,8 +27,8 @@
 
 
     (k,v)=> # set
-      if k.constructor == String
-        k = utf8e k
+      k = encode k
+      v = encode v
       m.set k,v
       return
 

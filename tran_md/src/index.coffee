@@ -34,7 +34,8 @@
       hash = hash128 txt
       pre = mget hash
       if pre
-        traned[pos] = utf8d pre
+        console.log pre
+        # traned[pos] = utf8d pre
       else
         [p, t] = prefix txt
         to_tran_prefix.push p
@@ -47,10 +48,10 @@
     for await i from tranHtm(to_tran_htm,to_lang, from_lang)
       txt = to_tran_prefix[n] + htm2md i
       mset to_tran_hash[n], txt
-      traned[to_tran_pos[n]] = utf8e txt
+      traned[to_tran_pos[n]] = txt
       n++
 
     msave()
-    console.log traned
+    # console.log traned
     # traned.join('')
     return

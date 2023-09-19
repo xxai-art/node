@@ -36,14 +36,14 @@ dependencies:
     specifier: ^0.0.1
     version: 0.0.1
   '@xxai/cache_map':
-    specifier: ^0.0.8
-    version: 0.0.8
+    specifier: ^0.0.9
+    version: 0.0.9
   '@xxai/is-change':
     specifier: ^0.0.4
     version: 0.0.4
   '@xxai/nt':
-    specifier: ^0.0.8
-    version: 0.0.8
+    specifier: ^0.0.9
+    version: 0.0.9
   '@xxai/vbyte':
     specifier: ^0.0.1
     version: 0.0.1
@@ -200,10 +200,11 @@ packages:
       '@xxai/binmap': 0.0.1
     dev: false
 
-  /@xxai/cache_map@0.0.8:
-    resolution: {integrity: sha512-cGaAoHAcICVXSIplO8AGc3GtX7th0VA0Fu5TPzJ5TaxvFzYQqUTQwo+5XlG1AKE+6+Py4YaHgZTIRl8ufdSXVQ==}
+  /@xxai/cache_map@0.0.9:
+    resolution: {integrity: sha512-zWAriu1gtJZLKjZpHHQhMCPUOM+lS6aXXEbLw/FIkqQ1Co7LvgwOCfYV4fpH2lCb9CcAnPxW2fjiw9ttJERmcw==}
     dependencies:
       '@w5/binmap': 0.0.5
+      '@w5/utf8': 0.0.3
       '@w5/write': 0.0.1
     dev: false
 
@@ -218,8 +219,8 @@ packages:
       '@xxai/vbyte': 0.0.1
     dev: false
 
-  /@xxai/nt@0.0.8:
-    resolution: {integrity: sha512-FpBuOH7hyo9tBO+D8p+3WTYMH8MgT7UVWBsMbl4Oi2HtPvIu2mhk9uEIf0BliQVdeRM3PyF67orprpE3ViKqig==}
+  /@xxai/nt@0.0.9:
+    resolution: {integrity: sha512-Fdyq3qVB8yez6Ix92T04CKGW5FR4yjaMUGAtEaONN0qlz4KlcMYvN4xI8tNRbrO/DasMqP80iHhrjzvosYHJqg==}
     dependencies:
       '@w5/read': 0.0.1
       '@w5/write': 0.0.1
