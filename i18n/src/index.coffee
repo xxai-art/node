@@ -1,6 +1,7 @@
 #!/usr/bin/env coffee
 
 > ./nt.js
+  ./md.js
   ./toFrom.js
   @w5/ext
   @w5/walk > walkRel
@@ -12,7 +13,7 @@
 EXT_NT = '.nt'
 
 tran = {
-  md: =>
+  md
   nt
 }
 
