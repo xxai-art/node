@@ -22,7 +22,7 @@ tran = {
   to_from = toFrom i18n, to
 
   [isChange,changeSave] = IsChange(
-    join pwd,'.i18n/cache'
+    join pwd,'.i18n'
     pwd
   )
 
