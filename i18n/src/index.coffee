@@ -8,6 +8,7 @@
   @xxai/nt:Nt
   fs > statSync existsSync
   path > join
+  ./env.js > CACHE_DIR
 
 EXT_NT = '.nt'
 
@@ -20,7 +21,9 @@ tran = {
   {i18n} = Nt(pwd)
   to_from = toFrom i18n, to
 
-  [isChange,changeSave] = IsChange(pwd)
+  [isChange,changeSave] = IsChange(
+    pwd, CACHE_DIR
+  )
 
   changed = new Set
 

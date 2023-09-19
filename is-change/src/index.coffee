@@ -1,14 +1,14 @@
 #!/usr/bin/env coffee
 
-> @xxai/cache
-  @w5/xxhash3-wasm > hash128
+> ./env.js > CACHE_DIR
+  @w5/binmap > BinMap
   @w5/u8 > u8eq
+  @w5/write
+  @w5/xxhash3-wasm > hash128
+  @xxai/cache
+  @xxai/vbyte > vbyteE
   fs > statSync readFileSync existsSync
   path > join
-  @xxai/vbyte > vbyteE
-  ./env.js > CACHE_DIR
-  @w5/binmap > BinMap
-  @w5/write
 
 < (dir)=>
   cache_path = join(
