@@ -47,10 +47,7 @@ export default merge = (txt) =>
     else if trimStarted.startsWith '<!--'
       p = line.indexOf '-->',3
       if p > 0
-        buffer += line.slice(0,p+4) + '\n'
-        merged.push buffer
-        buffer = ''
-        is_comment_block = false
+        merged.push line
       else
         buffer += line + '\n'
         is_comment_block = true
