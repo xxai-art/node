@@ -30,7 +30,7 @@
     "@w5/xxhash3-wasm": "^0.0.6",
     "@xxai/cache": "^0.0.1",
     "@xxai/cache_map": "^0.0.10",
-    "@xxai/is-change": "^0.0.4",
+    "@xxai/is-change": "^0.0.6",
     "@xxai/nt": "^0.0.9",
     "@xxai/tran_md": "^0.0.4",
     "@xxai/vbyte": "^0.0.1",
