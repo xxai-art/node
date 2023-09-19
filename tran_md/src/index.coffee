@@ -22,7 +22,7 @@
   (to_lang, from_lang, cache_fp) =>
     [mget,mset,msave]=  CacheMap cache_fp
 
-    traned = []
+    traned = md.slice()
 
     to_tran_hash = []
     to_tran_htm = []
@@ -34,8 +34,7 @@
       hash = hash128 txt
       pre = mget hash
       if pre
-        console.log pre
-        # traned[pos] = utf8d pre
+        traned[pos] = utf8d pre
       else
         [p, t] = prefix txt
         to_tran_prefix.push p
@@ -52,6 +51,6 @@
       n++
 
     msave()
-    # console.log traned
+    console.log traned
     # traned.join('')
     return

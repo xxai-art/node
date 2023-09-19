@@ -36,8 +36,8 @@ dependencies:
     specifier: ^0.0.1
     version: 0.0.1
   '@xxai/cache_map':
-    specifier: ^0.0.9
-    version: 0.0.9
+    specifier: ^0.0.10
+    version: 0.0.10
   '@xxai/is-change':
     specifier: ^0.0.4
     version: 0.0.4
@@ -200,8 +200,8 @@ packages:
       '@xxai/binmap': 0.0.1
     dev: false
 
-  /@xxai/cache_map@0.0.9:
-    resolution: {integrity: sha512-zWAriu1gtJZLKjZpHHQhMCPUOM+lS6aXXEbLw/FIkqQ1Co7LvgwOCfYV4fpH2lCb9CcAnPxW2fjiw9ttJERmcw==}
+  /@xxai/cache_map@0.0.10:
+    resolution: {integrity: sha512-itF8nh1cEvHQV2QqEgUqZN9VPicSYTdnNY8q6j+bnFWDkG66K8pI1OHsh0v1wbxjlU8BgggKdR39Lcwm85P7bA==}
     dependencies:
       '@w5/binmap': 0.0.5
       '@w5/utf8': 0.0.3

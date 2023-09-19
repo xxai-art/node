@@ -24,7 +24,7 @@
     "@w5/tran": "^0.0.6",
     "@w5/utf8": "^0.0.3",
     "@w5/xxhash3-wasm": "^0.0.4",
-    "@xxai/cache_map": "^0.0.9",
+    "@xxai/cache_map": "^0.0.10",
     "@xxai/replace_n": "^0.0.1"
   }
 }
