@@ -22,7 +22,8 @@ tran = {
   to_from = toFrom i18n, to
 
   [isChange,changeSave] = IsChange(
-    pwd, CACHE_DIR
+    CACHE_DIR
+    pwd
   )
 
   changed = new Set
