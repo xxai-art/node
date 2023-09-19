@@ -13,16 +13,17 @@
   @xxai/cache_map:CacheMap
   @w5/xxhash3-wasm > hash128
 
-< (md)=>
+< (md, from_lang)=>
   # 找到可以翻译的行，然后转html，翻译之后再转回来
 
   [
-    md
+    src
     pos_li
     code_pos_li
   ] = merge ReplaceN(md)
 
-  (to_lang, from_lang, cache_fp) =>
+  (to_lang, cache_fp) =>
+    md = src.slice()
     [mget,mset,msave]=  CacheMap cache_fp
 
     to_tran_hash = []
