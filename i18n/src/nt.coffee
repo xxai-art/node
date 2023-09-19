@@ -21,7 +21,7 @@ cacheNt = cache load
   to_nt = load(join dir, to_lang, relpath) or {}
 
   [mget,mset,msave]=  CacheMap(
-    join dir,'.i18n', from_lang+'!'+to_lang, relpath
+    join dir,'.i18n', from_lang+'.'+to_lang, relpath
   )
 
   kli = []
