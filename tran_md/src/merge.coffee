@@ -68,7 +68,7 @@ export default merge = (txt) =>
           continue
         if not (
           line.startsWith('<') and line.endsWith('>')
-        ) and trimStarted and not line.startsWith('![')
+        ) and trimStarted
           unmerged_line_numbers.push merged.length
         merged.push line
 
@@ -89,6 +89,8 @@ if process.argv[1] == decodeURI (new URL(import.meta.url)).pathname
     'Comment line 2',
     '-->',
     'Line 3'
+    '![xxAI.Art 品牌标识](https://raw.githubusercontent.com/xxai-art/web/main/file/svg/logo.svg)'
+    'Line 4'
   ]
 
   result = merge(test_input.join('\n'))

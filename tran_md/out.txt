@@ -1,5 +1,4 @@
 [
-  '[!]: markdown 原生注释',
   '# 测试',
   '## 代码段',
   '`CoffeeScript` 代码',
@@ -9,6 +8,7 @@
   '## 链接',
   '[Markdown 文档](https://github.com/xxai-art/xxai-art-md)',
   '## 图片',
+  '![xxAI.Art 品牌标识](https://raw.githubusercontent.com/xxai-art/web/main/file/svg/logo.svg)',
   '## 缩进',
   '鲁迅先生在《自题小像》写道 :',
   '  灵台无计逃神矢',
