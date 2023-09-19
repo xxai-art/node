@@ -18,6 +18,7 @@
   [
     md
     pos_li
+    code_pos_li
   ] = merge ReplaceN(md)
 
   (to_lang, from_lang, cache_fp) =>
@@ -27,6 +28,9 @@
     to_tran_htm = []
     to_tran_pos = []
     to_tran_prefix = []
+
+    for i from pick(md, code_pos_li)
+      console.log i
 
     for txt, n in pick(md,pos_li)
       pos = pos_li[n]

@@ -29,6 +29,7 @@ export default merge = (txt) =>
   merged = []
   buffer = ''
   unmerged_line_numbers = []
+  code_line_numbers = []
 
   # 遍历输入数组的每一行
   for line in li
@@ -39,6 +40,7 @@ export default merge = (txt) =>
     # 判断当前行是否为代码块或注释块的开始或结束，并更新状态
     if trimStarted.startsWith '```'
       if is_code_block
+        code_line_numbers.push merged.length
         merged.push buffer + line
         buffer = ''
       else
@@ -76,7 +78,7 @@ export default merge = (txt) =>
       merged.push line
 
   # 返回合并后的数组及未合并行的行号数组
-  return [merged, unmerged_line_numbers]
+  return [merged, unmerged_line_numbers, code_line_numbers]
 
 if process.argv[1] == decodeURI (new URL(import.meta.url)).pathname
   test_input = [

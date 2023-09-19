@@ -1,4 +1,15 @@
 use https_proxy http://127.0.0.1:7890
+```coffee
+# 代码注释
+console.log 'good'
+```
+```rust
+/* 代码注释 */
+
+fn main(){
+  dbg!("yes");
+}
+```
 # Test
 
 ## Code Snippet
