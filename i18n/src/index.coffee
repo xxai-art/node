@@ -1,14 +1,14 @@
 #!/usr/bin/env coffee
 
-> ./IsChange.js
+> ./env.js > CACHE_DIR
   ./nt.js
   ./toFrom.js
   @w5/ext
   @w5/walk > walkRel
+  @xxai/is-change:IsChange
   @xxai/nt:Nt
   fs > statSync existsSync
   path > join
-  ./env.js > CACHE_DIR
 
 EXT_NT = '.nt'
 

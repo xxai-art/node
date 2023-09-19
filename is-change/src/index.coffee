@@ -1,7 +1,6 @@
 #!/usr/bin/env coffee
 
-> ./env.js > CACHE_DIR
-  @w5/binmap > BinMap
+> @w5/binmap > BinMap
   @w5/u8 > u8eq
   @w5/write
   @w5/xxhash3-wasm > hash128
@@ -10,9 +9,9 @@
   fs > statSync readFileSync existsSync
   path > join
 
-< (dir)=>
+< (dir, cache_dir)=>
   cache_path = join(
-    CACHE_DIR
+    cache_dir
     Buffer.from(hash128(dir)).toString('base64url')
   )
   m = new BinMap
