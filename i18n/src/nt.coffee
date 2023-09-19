@@ -1,7 +1,7 @@
 > @w5/tran > tranTxt
   @w5/xxhash3-wasm > hash128
   @xxai/cache
-  @w5/binmap > BinMap
+  @xxai/cache_map:CacheMap
   @w5/write
   @w5/u8 > u8eq
   @xxai/nt/dump.js
@@ -19,23 +19,21 @@ cacheNt = cache load
     return
 
   to_nt = load(join dir, to_lang, relpath) or {}
-  cache_fp = join dir,'.i18n', from_lang+'!'+to_lang, relpath
 
-  if existsSync cache_fp
-    prem = BinMap.load readFileSync cache_fp
-  m = new BinMap # 每次都重建，这样可以淘汰不存在的key
+  [mget,mset,msave]=  CacheMap(
+    join dir,'.i18n', from_lang+'!'+to_lang, relpath
+  )
 
   kli = []
   vli = []
 
   for [k,v] from Object.entries from_nt
     hash = hash128(v)
-    m.set k,hash
     if k of to_nt
-      if prem
-        pre = prem.get(k)
-        if pre and u8eq pre,hash
-          continue
+      pre = mget(k)
+      if pre and u8eq pre,hash
+        continue
+    mset k,hash
     kli.push k
     vli.push v
 
@@ -54,9 +52,6 @@ cacheNt = cache load
       join dir, to_lang, relpath
       to_nt
     )
-    write(
-      cache_fp
-      m.dump()
-    )
+    msave()
   # console.log to_lang, from_lang, kli, vli
   return

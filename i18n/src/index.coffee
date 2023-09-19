@@ -1,7 +1,6 @@
 #!/usr/bin/env coffee
 
-> ./env.js > CACHE_DIR
-  ./nt.js
+> ./nt.js
   ./toFrom.js
   @w5/ext
   @w5/walk > walkRel
@@ -22,7 +21,7 @@ tran = {
   to_from = toFrom i18n, to
 
   [isChange,changeSave] = IsChange(
-    CACHE_DIR
+    join pwd,'.i18n/cache'
     pwd
   )
 
