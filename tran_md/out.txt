@@ -21,14 +21,13 @@ fn main(){
 
 ## Comment
 
-<!-- 单行 HTML 注释 
+<!-- 单行 HTML 注释 -->
 
 
 <!--
 多行
 HTML
 注释
--->
 -->
 
 ## Quote

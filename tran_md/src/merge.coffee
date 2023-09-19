@@ -47,7 +47,7 @@ export default merge = (txt) =>
     else if trimStarted.startsWith '<!--'
       p = line.indexOf '-->',3
       if p > 0
-        buffer += line.slice(0,p) + '\n'
+        buffer += line.slice(0,p+4) + '\n'
         merged.push buffer
         buffer = ''
         is_comment_block = false
@@ -56,13 +56,15 @@ export default merge = (txt) =>
         is_comment_block = true
     else
       if is_code_block or is_comment_block
-        buffer += line + '\n'
+        buffer += line
         if is_comment_block
           p = line.indexOf '-->'
           if ~p
             is_comment_block = false
-            merged.push buffer + line
+            merged.push buffer
             buffer = ''
+            continue
+        buffer += '\n'
       else if not line.startsWith('[#]: ')
         if not trimStarted and not merged.length
           continue
