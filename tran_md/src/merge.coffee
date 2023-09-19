@@ -63,7 +63,7 @@ export default merge = (txt) =>
             is_comment_block = false
             merged.push buffer + line
             buffer = ''
-      else if not line.startsWith('[!]: ')
+      else if not line.startsWith('[#]: ')
         if not trimStarted and not merged.length
           continue
         if not (
