@@ -1,46 +1,21 @@
 [
   '# 测试',
-  '',
   '## 代码段',
-  '',
   '`CoffeeScript` 代码',
-  '',
   '```coffee',
   '# 代码注释',
   "console.log 'good'",
-  '```\n\n```rust\n/* 代码注释 */\n\nfn main(){\n  dbg!("yes");\n}\n```',
-  '',
   '## 注释',
-  '',
-  '<!--',
-  'HTML 注释',
-  '-->',
-  '',
   '## 引用',
-  '',
   '> 道可道，非常道',
-  '',
   '## 链接',
-  '',
   '[Markdown 文档](https://github.com/xxai-art/xxai-art-md)',
-  '',
   '## 图片',
-  '',
-  '![xxAI.Art 品牌标识](https://raw.githubusercontent.com/xxai-art/web/main/file/svg/logo.svg)',
-  '',
   '## 缩进',
-  '',
   '鲁迅先生在《自题小像》写道 :',
-  '',
   '  灵台无计逃神矢',
   '  风雨如磐暗故园',
   '  寄意寒星荃不察',
-  '  我以我血荐轩辕',
-  ''
-]
-[
-   0,  2,  4,  6,  7,  8, 11,
-  13, 14, 17, 19, 21, 23, 25,
-  29, 31, 33, 34, 35, 36
+  '  我以我血荐轩辕'
 ]
 undefined

@@ -46,7 +46,7 @@ export default merge = (txt) =>
           buffer += line + '\n'
         is_code_block = !is_code_block
 
-      when '<--'
+      when '<!--'
         is_comment_block = true
         buffer += line + '\n'
 
@@ -79,7 +79,7 @@ if process.argv[1] == decodeURI (new URL(import.meta.url)).pathname
     '```',
     '<img>'
     'Line 2',
-    '<--',
+    '<!--',
     'Comment line 1',
     'Comment line 2',
     '-->',
