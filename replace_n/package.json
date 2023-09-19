@@ -1,8 +1,8 @@
 {
-  "name": "@xxai/tran_md",
-  "version": "0.0.0",
+  "name": "@xxai/replace_n",
+  "version": "0.0.1",
   "repository": "https://github.com/xxai-art/node.git",
-  "homepage": "https://github.com/xxai-art/node/tree/main/tran_md",
+  "homepage": "https://github.com/xxai-art/node/tree/main/replace_n",
   "author": "xxai.art@gmail.com",
   "license": "BSL1.1 ",
   "exports": {
@@ -14,9 +14,5 @@
   ],
   "devDependencies": {},
   "scripts": {},
-  "type": "module",
-  "dependencies": {
-    "@w5/read": "^0.0.1",
-    "@xxai/cache_map": "^0.0.8"
-  }
+  "type": "module"
 }

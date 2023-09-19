@@ -1,4 +1,4 @@
-> @w5/walk
+> @w5/read
 
-< (dir)=>
-  dir
+< (md,cache_fp)=>
+  md = md.split(':')
