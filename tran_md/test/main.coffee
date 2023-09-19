@@ -12,5 +12,4 @@ fp = join(ROOT, 'test.md')
 
 console.log await TranMd(
   read(fp)
-  join ROOT,'.cache'
-)
+) join ROOT,'.cache'
