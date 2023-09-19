@@ -7,6 +7,10 @@
 
 ROOT = uridir(import.meta)
 
-read()
 
-console.log await tran_md 123
+fp = join(ROOT, 'test.md')
+
+console.log await TranMd(
+  read(fp)
+  join ROOT,'.cache'
+)

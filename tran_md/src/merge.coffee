@@ -2,8 +2,6 @@
 
 ###
 
-因为代码和html注释无需翻译，把代码和html注释合并为一行
-
 # 使用 chatgpt gpt4 编码
 https://chat.openai.com/chat/9ba1710a-0ecd-4af2-991a-2fa9edf7f359
 
@@ -19,7 +17,11 @@ https://chat.openai.com/chat/9ba1710a-0ecd-4af2-991a-2fa9edf7f359
 
 ###
 
-# 定义 merge 函数，用于合并代码块和注释块
+###
+因为代码和html注释无需翻译，把代码和html注释合并为一行
+定义 merge 函数，用于合并代码块和注释块
+###
+
 export default merge = (txt) =>
   li = txt.split('\n')
   # 初始化变量

@@ -4,7 +4,7 @@
   ./toFrom.js
   @w5/ext
   @w5/walk > walkRel
-  @xxai/is-change:IsChange
+  @xxai/is-change
   @xxai/nt:Nt
   fs > statSync existsSync
   path > join

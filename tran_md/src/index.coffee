@@ -1,6 +1,11 @@
 > @w5/read
   @xxai/replace_n
+  ./merge.js
 
 < (md,cache_fp)=>
-  md = replaceN(md).split('\n')
+  [
+    md
+    pos_li
+  ] = merge ReplaceN(md)
   console.log md
+  console.log pos_li
