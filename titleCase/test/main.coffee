@@ -1,5 +1,5 @@
 #!/usr/bin/env coffee
 
-> @xxai/titleCase
+> @xxai/title-case
 
-console.log titleCase 'hello CHINA a-b-c'
+console.log TitleCase 'hello CHINA a-b-c'
