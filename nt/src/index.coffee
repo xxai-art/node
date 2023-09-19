@@ -11,10 +11,7 @@ EXT = '.nt'
   new Proxy(
     {}
     get:(_, file)=>
-      fp = join dir, file+EXT
-      if existsSync fp
-        return load fp
-      return
+      load join dir, file+EXT
 
     set:(_, file, val)=>
       dump(
