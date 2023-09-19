@@ -30,6 +30,7 @@
     "@w5/xxhash3-wasm": "^0.0.4",
     "@xxai/cache": "^0.0.1",
     "@xxai/nt": "^0.0.8",
-    "@xxai/vbyte": "^0.0.1"
+    "@xxai/vbyte": "^0.0.1",
+    "yargs": "^17.7.2"
   }
 }

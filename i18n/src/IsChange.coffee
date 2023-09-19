@@ -35,10 +35,11 @@
     isChange
     (li)=> # save
       for fp from li
-        stats = statSync join dir,fp
-        m.set hash128(fp), vbyteE [
-          stats.size,stats.mtime
-        ]
+        if existsSync fp
+          stats = statSync join dir,fp
+          m.set hash128(fp), vbyteE [
+            stats.size,stats.mtime
+          ]
       write(
         cache_path
         m.dump()

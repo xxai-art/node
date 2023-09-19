@@ -11,15 +11,14 @@
 
 EXT_NT = '.nt'
 
-
 tran = {
   md: =>
   nt
 }
 
-< (pwd)=>
+< (pwd, to)=>
   {i18n} = Nt(pwd)
-  to_from = toFrom i18n
+  to_from = toFrom i18n, to
 
   [isChange,changeSave] = IsChange(pwd)
 
