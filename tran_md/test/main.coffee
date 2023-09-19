@@ -10,6 +10,6 @@ ROOT = uridir(import.meta)
 
 fp = join(ROOT, 'test.md')
 
-console.log await TranMd(
+await TranMd(
   read(fp)
 ) 'en','zh',join ROOT,'.cache'

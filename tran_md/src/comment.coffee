@@ -95,25 +95,15 @@ cStyleComment = (txt)=>
   ]
 
 
-comment = {
+export default {
   rust:cStyleComment
   c: cStyleComment
   cpp: cStyleComment
   java: cStyleComment
   js: cStyleComment
-  coffee: cStyleComment
+  coffee: pythonComment
   py: pythonComment
   python: pythonComment
   bash: pythonComment
 }
 
-console.log cStyleComment(
-  "abc/* 123 */ // xyz\nabc// 2"
-)
-console.log pythonComment(
-  """
-1
-# test
-2
-"""
-)

@@ -8,6 +8,7 @@
   @xxai/replace_n
   ./merge.js
   ./pick.js
+  ./tranComment.js
   ./prefix.js
   @xxai/cache_map:CacheMap
   @w5/xxhash3-wasm > hash128
@@ -29,8 +30,7 @@
     to_tran_pos = []
     to_tran_prefix = []
 
-    for i from pick(md, code_pos_li)
-      console.log i
+    await tranComment md, code_pos_li, mget, mset
 
     for txt, n in pick(md,pos_li)
       pos = pos_li[n]
