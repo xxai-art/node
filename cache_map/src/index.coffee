@@ -24,11 +24,10 @@
       return
 
     => #save
-      if m.size
-        write(
-          fp
-          m.dump()
-        )
+      write(
+        fp
+        m.dump()
+      )
       return
   ]
 
