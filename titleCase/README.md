@@ -15,5 +15,5 @@ console.log titleCase 'hello CHINA a-b-c'
 output :
 
 ```
-Hello CHINA A-B-C
+./out.txt
 ```
