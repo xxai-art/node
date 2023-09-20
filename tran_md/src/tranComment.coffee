@@ -17,7 +17,6 @@
     n = 0
     for i,pos in pick code_li,pos_li
       hash = hash128 'code\r'+i
-      console.log hash,i
       pre = mget hash
       pos = pos_li[n]
       if pre
