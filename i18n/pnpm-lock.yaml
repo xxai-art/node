@@ -11,6 +11,9 @@ dependencies:
   '@w5/binmap':
     specifier: ^0.0.5
     version: 0.0.5
+  '@w5/default':
+    specifier: ^0.0.1
+    version: 0.0.1
   '@w5/ext':
     specifier: ^0.0.1
     version: 0.0.1
@@ -120,6 +123,10 @@ packages:
 
   /@w5/caller_line@0.0.1:
     resolution: {integrity: sha512-JpKA5fV4NPtyE5pOvG1/z/qLSUOIvONOQhsdaZaBX9LPHQgYmUoteY28XXMpF+HAcIaUZpUFMGxZRU5WXWGJOA==}
+    dev: false
+
+  /@w5/default@0.0.1:
+    resolution: {integrity: sha512-o0Kxb7Ridf63kz62UOZcw800Qz2HHE68F+7JPdB58PF5QFtOZKpsH0IXHb2Cv0qWSUoJ8SO4s49H3gWc7lKlfA==}
     dev: false
 
   /@w5/ext@0.0.1:
