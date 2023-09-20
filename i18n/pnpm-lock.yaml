@@ -48,8 +48,8 @@ dependencies:
     specifier: ^0.0.9
     version: 0.0.9
   '@xxai/tran_md':
-    specifier: ^0.0.5
-    version: 0.0.5
+    specifier: ^0.0.6
+    version: 0.0.6
   '@xxai/vbyte':
     specifier: ^0.0.1
     version: 0.0.1
@@ -255,8 +255,8 @@ packages:
     resolution: {integrity: sha512-HraXzeIoatcrESOhZ6s3639YKIulKigwWt/CXzCp/um+g9fsRYowiVQLzXocwQaZ6y1RuWKrmUr/YKIDV2+FaA==}
     dev: false
 
-  /@xxai/tran_md@0.0.5:
-    resolution: {integrity: sha512-uv1Or9tOkJmEooNvRkOoSiD2uFYaLVrkPmhJP0BqQNTPfAbjrrhxhjrn6+uqlz5mSNfSKwm+X2EJhN6YSuNNRw==}
+  /@xxai/tran_md@0.0.6:
+    resolution: {integrity: sha512-gcjhVv9IOw2Uej1gk8b6w6Dl/45BK2lRG8A3YqGNQj9ymuYWNnZbCvSEfA1vxslA7bAvICgNcRM+fl1Jw8SFXg==}
     dependencies:
       '@w5/htm2md': 0.0.1
       '@w5/md2htm': 0.0.1
