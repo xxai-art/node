@@ -12,9 +12,10 @@
     prefix += s.slice(0,++p)
     s = s.slice(p)
   else
-    if s.startsWith('[') and s.endsWith ']:#'
+    trimEnd = s.trimEnd()
+    if trimEnd.startsWith('[') and trimEnd.endsWith(']:#')
       prefix = '['
-      s = s.slice(1,-3)
+      s = trimEnd.slice(1,-3)
       suffix = ']:#'
     else
       for i from '-+*'

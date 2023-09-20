@@ -25,6 +25,9 @@ console.log await TranMd(
 output :
 
 ```
+use https_proxy http://127.0.0.1:7890
+[Markdown native comments]:#
+
 # Test
 
 ## Code Snippet
