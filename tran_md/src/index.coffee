@@ -12,17 +12,7 @@
   @xxai/cache_map:CacheMap
   @xxai/replace_n
   @xxai/title-case
-
-
-updateCache = (src, update_cache_fp)=>
-  [
-    md
-    md_pos_li
-    md_code_pos_li
-  ] = merge ReplaceN(read update_cache_fp)
-  console.log md.length, src.length
-  return
-
+  ./updateCache.js
 
 < (md, from_lang)=>
   # 找到可以翻译的行，然后转html，翻译之后再转回来
@@ -37,7 +27,7 @@ updateCache = (src, update_cache_fp)=>
     [mget,mset,msave]=  CacheMap cache_fp
 
     if update_cache_fp
-      updateCache(src, update_cache_fp)
+      updateCache(from_lang, mget, mset, src, update_cache_fp)
       msave()
     else
       md = src.slice()

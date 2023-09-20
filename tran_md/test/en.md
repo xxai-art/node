@@ -52,4 +52,3 @@ Mr. Lu Xun wrote in "Self-titled Portrait":
   Stormy and Dark Hometown
   The meaning of the cold star is not noticed
   I recommend Xuanyuan with my blood
-
