@@ -42,8 +42,8 @@ dependencies:
     specifier: ^0.0.10
     version: 0.0.10
   '@xxai/is-change':
-    specifier: ^0.0.7
-    version: 0.0.7
+    specifier: ^0.0.8
+    version: 0.0.8
   '@xxai/nt':
     specifier: ^0.0.9
     version: 0.0.9
@@ -229,8 +229,8 @@ packages:
       '@w5/write': 0.0.1
     dev: false
 
-  /@xxai/is-change@0.0.7:
-    resolution: {integrity: sha512-FeLDIcgiym6SuIuO8+ehiWX8bdn6rw57qIGVoAiY/t+1oHeKCZKZUJZlja66EkMOqjgVvJ+Y4pTNsD9KDyYMxQ==}
+  /@xxai/is-change@0.0.8:
+    resolution: {integrity: sha512-ZfQVAZdhhVZHoM+a02UUZuFmsi2JXLMuJxUb4IKAk2W57o3wdA/FgmjbWX5pXh7lXurab+7R5H9t7GnPWvq+9w==}
     dependencies:
       '@w5/binmap': 0.0.5
       '@w5/u8': 0.0.3
