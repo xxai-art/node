@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@w5/bar':
+    specifier: ^0.0.5
+    version: 0.0.5
   '@w5/binmap':
     specifier: ^0.0.5
     version: 0.0.5
@@ -39,8 +42,8 @@ dependencies:
     specifier: ^0.0.10
     version: 0.0.10
   '@xxai/is-change':
-    specifier: ^0.0.4
-    version: 0.0.4
+    specifier: ^0.0.7
+    version: 0.0.7
   '@xxai/nt':
     specifier: ^0.0.9
     version: 0.0.9
@@ -104,8 +107,11 @@ packages:
     dev: false
     optional: true
 
-  /@w5/binmap@0.0.3:
-    resolution: {integrity: sha512-sOmsDXx4WjOdcKsioletEmYd96dfOPgNYVzhLaIT81xBPuAdzCyeNC4Zs9PAl3WXyqLNFKctNdOLA2y73prEcw==}
+  /@w5/bar@0.0.5:
+    resolution: {integrity: sha512-LRaQU2/6youNijra8XHcNmyeeICUuGI6kBp4NQLZZ1xkSQfOvqtHRxmwdUdkVrChzEOrJ6gSzbicoqwdStTtrQ==}
+    dependencies:
+      chalk: 5.3.0
+      progress: 2.0.3
     dev: false
 
   /@w5/binmap@0.0.5:
@@ -200,10 +206,6 @@ packages:
     resolution: {integrity: sha512-VyQXX2C3yRqfS7D5B+yCcsR1tvzZ1DzPLi5kugBOe/EeL+LOD3ftFamfik7wQr2TG7XQ7VF0snUpqVLaytwfOA==}
     dev: false
 
-  /@w5/xxhash3-wasm@0.0.4:
-    resolution: {integrity: sha512-krE6ziY9vviJ8rJlYRiODXGR+f4j+GfawVPjeHRY2kmNSTYd1+av8NDzElKbmtiaa5O2laBr6j1Hv0es8RuWlQ==}
-    dev: false
-
   /@w5/xxhash3-wasm@0.0.6:
     resolution: {integrity: sha512-mP+pfMV6StrN3FLHbPydwjmB9aTllAmtbcZ7ZeLW/2hzkZ4Q/58xQbxgdwDvmaN8HNXZqjE6x9qWmhUxbvjG5Q==}
     dev: false
@@ -227,13 +229,13 @@ packages:
       '@w5/write': 0.0.1
     dev: false
 
-  /@xxai/is-change@0.0.4:
-    resolution: {integrity: sha512-tHKLtFS+m1ORTHGZnYtjeLMpN+6ACdeZWUSifEDhmCtTIYE7Evv3l5tlZxooeIj27YkPveNJHvGSlxhnSx/s2Q==}
+  /@xxai/is-change@0.0.7:
+    resolution: {integrity: sha512-FeLDIcgiym6SuIuO8+ehiWX8bdn6rw57qIGVoAiY/t+1oHeKCZKZUJZlja66EkMOqjgVvJ+Y4pTNsD9KDyYMxQ==}
     dependencies:
-      '@w5/binmap': 0.0.3
+      '@w5/binmap': 0.0.5
       '@w5/u8': 0.0.3
       '@w5/write': 0.0.1
-      '@w5/xxhash3-wasm': 0.0.4
+      '@w5/xxhash3-wasm': 0.0.6
       '@xxai/cache': 0.0.1
       '@xxai/vbyte': 0.0.1
     dev: false
@@ -333,6 +335,11 @@ packages:
     dependencies:
       base64-js: 1.5.1
       ieee754: 1.2.1
+    dev: false
+
+  /chalk@5.3.0:
+    resolution: {integrity: sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==}
+    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
     dev: false
 
   /chownr@1.1.4:
@@ -667,6 +674,11 @@ packages:
 
   /process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
+    dev: false
+
+  /progress@2.0.3:
+    resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}
+    engines: {node: '>=0.4.0'}
     dev: false
 
   /pump@3.0.0:

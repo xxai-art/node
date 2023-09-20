@@ -1,6 +1,7 @@
 > @w5/tran > tranTxt
   @w5/xxhash3-wasm > hash128
   @xxai/cache
+  @w5/bar:Bar
   @xxai/cache_map:CacheMap
   @w5/write
   @w5/u8 > u8eq
@@ -37,15 +38,14 @@ cacheNt = cache load
     kli.push k
     vli.push v
 
-  if not vli.length
-    return
-
-  if vli.length
-    console.log from_lang, '→', to_lang
+  {length} = vli
+  if length
     n = 0
+    bar = Bar(length)
     for await to from tranTxt vli, to_lang, from_lang
       to_nt[kli[n]] = to
-      console.log '  '+vli[n],'→',to
+      bar()
+      bar.log '  '+vli[n],'→',to
       ++n
 
     dump(

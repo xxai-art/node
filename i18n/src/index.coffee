@@ -4,6 +4,7 @@
   ./md.js
   ./toFrom.js
   @w5/ext
+  @w5/bar:Bar
   @w5/walk > walkRel
   @xxai/is-change
   @xxai/nt:Nt
@@ -28,7 +29,9 @@ tran = {
 
   changed = new Set
 
+  bar = Bar to_from.length
   for [to_lang,from_lang] from to_from
+    bar()
     from_dir = join pwd, from_lang
     if not existsSync from_dir
       continue
@@ -44,7 +47,9 @@ tran = {
       to_rel = join to_lang, fp
       from_fp = join pwd, from_rel
       to_fp = join pwd, to_rel
-      if isChange(from_rel) or isChange(to_rel)
+      from_change = isChange(from_rel)
+      bar.log from_lang, '→', to_lang
+      if from_change or isChange(to_rel)
         await tran[e](
           pwd
           fp
@@ -52,5 +57,6 @@ tran = {
           from_lang
         )
         changed.add to_rel
-  changeSave changed
+  if not to # 不然可能缓存了中间态，比如中译英，英还没译为其他，但是已经缓存了英文的哈希
+    changeSave changed
   return

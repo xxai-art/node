@@ -15,10 +15,10 @@
   "bin": {
     "i18n": "./lib/i18n.js"
   },
-  "devDependencies": {},
   "scripts": {},
   "type": "module",
   "dependencies": {
+    "@w5/bar": "^0.0.5",
     "@w5/binmap": "^0.0.5",
     "@w5/ext": "^0.0.1",
     "@w5/lang": "^0.0.5",
@@ -30,7 +30,7 @@
     "@w5/xxhash3-wasm": "^0.0.6",
     "@xxai/cache": "^0.0.1",
     "@xxai/cache_map": "^0.0.10",
-    "@xxai/is-change": "^0.0.6",
+    "@xxai/is-change": "^0.0.7",
     "@xxai/nt": "^0.0.9",
     "@xxai/tran_md": "^0.0.4",
     "@xxai/vbyte": "^0.0.1",

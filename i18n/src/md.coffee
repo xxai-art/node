@@ -14,7 +14,6 @@ tranMd = cache (dir, relpath, from_lang)=>
 
 < (dir, relpath, to_lang, from_lang)=>
   tran = tranMd(dir, relpath, from_lang)
-  console.log ' ',from_lang,'→',to_lang
   out = await tran(
     to_lang
     join dir,'.i18n',"#{from_lang}.#{to_lang}", relpath
