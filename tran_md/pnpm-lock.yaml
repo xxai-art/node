@@ -27,8 +27,8 @@ dependencies:
     specifier: ^0.0.10
     version: 0.0.10
   '@xxai/replace_n':
-    specifier: ^0.0.1
-    version: 0.0.1
+    specifier: ^0.0.3
+    version: 0.0.3
   '@xxai/title-case':
     specifier: ^0.0.4
     version: 0.0.4
@@ -174,8 +174,8 @@ packages:
       '@w5/write': 0.0.1
     dev: false
 
-  /@xxai/replace_n@0.0.1:
-    resolution: {integrity: sha512-J/0h5aHkZArWTP+0i/Q7SuFuCMqW+VqoLsigJUcP3C8paSlILIGFkDzjZwzaPzf/8AkU7VJMuzPgjLL54443Uw==}
+  /@xxai/replace_n@0.0.3:
+    resolution: {integrity: sha512-yM/kNTdgpg59NR9U2pLdB3n+UhX1dd0wFqqKbw6Ld7uqQPK+gdU8UhKO+7J0XP8qRjYPVg/SbM1w+F4tdg/s6g==}
     dev: false
 
   /@xxai/title-case@0.0.4:

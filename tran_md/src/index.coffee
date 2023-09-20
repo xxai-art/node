@@ -20,7 +20,7 @@ updateCache = (src, update_cache_fp)=>
     md_pos_li
     md_code_pos_li
   ] = merge ReplaceN(read update_cache_fp)
-  console.log md.slice(-3), src.slice(-3)
+  console.log md.length, src.length
   return
 
 
