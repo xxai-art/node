@@ -32,7 +32,7 @@
     "@xxai/cache_map": "^0.0.10",
     "@xxai/is-change": "^0.0.8",
     "@xxai/nt": "^0.0.9",
-    "@xxai/tran_md": "^0.0.4",
+    "@xxai/tran_md": "^0.0.5",
     "@xxai/vbyte": "^0.0.1",
     "yargs": "^17.7.2"
   }
