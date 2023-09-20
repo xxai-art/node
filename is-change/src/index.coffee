@@ -10,16 +10,13 @@
   path > join
 
 < (cache_dir, dir)=>
-  b64 = Buffer.from(hash128(dir)).toString('base64url')
   cache_path = join(
     cache_dir
     '.cache'
-    b64
   )
   hash_path = join(
     cache_dir
     '.hash'
-    b64
   )
   m = new BinMap
   hash_map = new BinMap
