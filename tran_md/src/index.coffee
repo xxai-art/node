@@ -1,17 +1,17 @@
 > @w5/read
-  @w5/tran > tranHtm
-  @w5/md2htm
-  @w5/htm2md
-  @xxai/title-case
-  @w5/utf8/utf8d.js
-  @w5/utf8/utf8e.js
-  @xxai/replace_n
   ./merge.js
   ./pick.js
-  ./tranComment.js
   ./psfix.js
-  @xxai/cache_map:CacheMap
+  ./tranComment.js
+  @w5/htm2md
+  @w5/md2htm
+  @w5/tran > tranHtm
+  @w5/utf8/utf8d.js
+  @w5/utf8/utf8e.js
   @w5/xxhash3-wasm > hash128
+  @xxai/cache_map:CacheMap
+  @xxai/replace_n
+  @xxai/title-case
 
 < (md, from_lang)=>
   # 找到可以翻译的行，然后转html，翻译之后再转回来
