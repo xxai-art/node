@@ -1,0 +1,18 @@
+{
+  "name": "@xxai/i18n-bin",
+  "version": "0.0.0",
+  "repository": "https://github.com/xxai-art/node.git",
+  "homepage": "https://github.com/xxai-art/node/tree/main/i18n-bin",
+  "author": "xxai.art@gmail.com",
+  "license": "BSL1.1 ",
+  "exports": {
+    ".": "./lib/index.js",
+    "./*": "./lib/*"
+  },
+  "files": [
+    "lib/*"
+  ],
+  "devDependencies": {},
+  "scripts": {},
+  "type": "module"
+}
