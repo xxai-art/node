@@ -14,6 +14,8 @@ export https_proxy=http://127.0.0.1:7890
 
 [test/main.coffee](./test/main.coffee) :
 
+nt 翻译
+
 * 支持嵌入变量 `<br 0>` 替换为 `$0`
 
 ```coffee

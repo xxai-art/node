@@ -1,4 +1,4 @@
-> @w5/tran > tranTxt
+> @w5/tran > tranHtm
   @w5/xxhash3-wasm > hash128
   @xxai/cache
   @w5/bar:Bar
@@ -42,7 +42,7 @@ cacheNt = cache load
   if length
     n = 0
     bar = Bar(length)
-    for await to from tranTxt vli, to_lang, from_lang
+    for await to from tranHtm vli, to_lang, from_lang
       to_nt[kli[n]] = to
       bar()
       bar.log '  '+vli[n],'→',to
