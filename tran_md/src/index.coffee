@@ -13,6 +13,17 @@
   @xxai/replace_n
   @xxai/title-case
 
+
+updateCache = (src, update_cache_fp)=>
+  [
+    md
+    md_pos_li
+    md_code_pos_li
+  ] = merge ReplaceN(read update_cache_fp)
+  console.log md.slice(-3), src.slice(-3)
+  return
+
+
 < (md, from_lang)=>
   # 找到可以翻译的行，然后转html，翻译之后再转回来
 
@@ -22,46 +33,51 @@
     code_pos_li
   ] = merge ReplaceN(md)
 
-  (to_lang, cache_fp) =>
-    md = src.slice()
+  (to_lang, cache_fp, update_cache_fp) =>
     [mget,mset,msave]=  CacheMap cache_fp
 
-    to_tran_hash = []
-    to_tran_htm = []
-    to_tran_pos = []
-    to_tran_prefix = []
-    to_tran_suffix = []
+    if update_cache_fp
+      updateCache(src, update_cache_fp)
+      msave()
+    else
+      md = src.slice()
+      to_tran_hash = []
+      to_tran_htm = []
+      to_tran_pos = []
+      to_tran_prefix = []
+      to_tran_suffix = []
 
-    await tranComment(
-      md, code_pos_li, mget, mset
-      to_lang
-      from_lang
-    )
+      await tranComment(
+        md, code_pos_li, mget, mset
+        to_lang
+        from_lang
+      )
 
-    for txt, n in pick(md,pos_li)
-      pos = pos_li[n]
-      hash = hash128 txt
-      pre = mget hash
-      if pre
-        md[pos] = utf8d(pre)+'\n'
-      else
-        [prefix, t, suffix] = psfix txt
-        to_tran_prefix.push prefix
-        to_tran_suffix.push suffix
-        to_tran_htm.push (await md2htm t).trimEnd()
-        to_tran_pos.push pos
-        to_tran_hash.push hash
+      for txt, n in pick(md,pos_li)
+        pos = pos_li[n]
+        hash = hash128 txt
+        pre = mget hash
+        if pre
+          md[pos] = utf8d(pre)+'\n'
+        else
+          [prefix, t, suffix] = psfix txt
+          to_tran_prefix.push prefix
+          to_tran_suffix.push suffix
+          to_tran_htm.push (await md2htm t).trimEnd()
+          to_tran_pos.push pos
+          to_tran_hash.push hash
 
-    n = 0
-    for await i from tranHtm(to_tran_htm,to_lang, from_lang)
-      p = to_tran_prefix[n]
-      i = htm2md i
-      if p.charAt(0) == '#'
-        i = TitleCase i
-      txt = p + i + to_tran_suffix[n]
-      mset to_tran_hash[n], txt
-      md[to_tran_pos[n]] = txt+'\n'
-      n++
+      n = 0
+      for await i from tranHtm(to_tran_htm,to_lang, from_lang)
+        p = to_tran_prefix[n]
+        i = htm2md i
+        if p.charAt(0) == '#'
+          i = TitleCase i
+        txt = p + i + to_tran_suffix[n]
+        mset to_tran_hash[n], txt
+        md[to_tran_pos[n]] = txt+'\n'
+        n++
 
-    msave()
-    md.join('')
+      msave()
+      return md.join('')
+    return

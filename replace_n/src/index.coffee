@@ -1,2 +1,2 @@
 < (s)=>
-  s.replaceAll('\r\n','\n').replaceAll('\r','\n')
+  s.trimEnd().replaceAll('\r\n','\n').replaceAll('\r','\n')
