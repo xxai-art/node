@@ -7,12 +7,12 @@
 `CoffeeScript` 代码
 
 ```coffee
-# 代码注释
+# coffee 代码注释
 console.log 'good'
 ```
 
 ```rust
-/* 代码注释 */
+/* rust 代码注释 */
 
 fn main(){
   dbg!("yes");

@@ -11,73 +11,38 @@
   @w5/uridir
   @w5/read
   path > join
+  @w5/write
+  fs > existsSync
 
 ROOT = uridir(import.meta)
 
-fp = join(ROOT, 'test.md')
+fp = join(ROOT, 'zh.md')
+en_fp = join ROOT,'en.md'
 
-console.log await TranMd(
+args = [
+  'en'
+  join(ROOT,'.cache')
+]
+
+if existsSync en_fp
+  args.push en_fp
+
+en = await TranMd(
   read(fp)
   'zh'
-) 'en',join ROOT,'.cache'
+)(
+  ...args
+)
+if args.length == 2
+  console.log en
+  write(
+    en_fp
+    en
+  )
 ```
 
 output :
 
 ```
-use https_proxy http://127.0.0.1:7890
-[Markdown native comments]:#
-
-# Test
-
-## Code Snippet
-
-`CoffeeScript` code
-
-```coffee
-# Code comments
-console.log 'good'
-
-```
-
-```rust
-/* Code comments */
-
-fn main(){
-  dbg!("yes");
-}
-```
-
-## Comment
-
-<!-- 单行 HTML 注释 --> 
-
-test
-
-<!--
-多行
-HTML
-注释
--->
-
-## Quote
-
-> Road to Road, very Avenue
-
-## Link
-
-[Markdown documentation](https://github.com/xxai-art/xxai-art-md)
-
-## Picture
-
-![xxAI.Art Brand Identity](https://raw.githubusercontent.com/xxai-art/web/main/file/svg/logo.svg)
-
-## Indentation
-
-Mr. Lu Xun wrote in "Self-titled Portrait":
-
-  Lingtai has no plan to escape from the divine arrow
-  Stormy and Dark Hometown
-  The meaning of the cold star is not noticed
-  I recommend Xuanyuan with my blood
+./out.txt
 ```
