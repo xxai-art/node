@@ -6,4 +6,8 @@
 
 # ROOT = uridir(import.meta)
 
-console.log await replace_n 123
+console.log ReplaceN '''
+
+test
+
+'''
