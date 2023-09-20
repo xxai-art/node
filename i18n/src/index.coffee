@@ -55,6 +55,7 @@ tran = {
           fp
           to_lang
           from_lang
+          from_change
         )
         changed.add to_rel
   if not to # 不然可能缓存了中间态，比如中译英，英还没译为其他，但是已经缓存了英文的哈希

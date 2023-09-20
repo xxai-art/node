@@ -25,7 +25,6 @@ console.log await TranMd(
 output :
 
 ```
-use https_proxy http://127.0.0.1:7890
 # Test
 
 ## Code Snippet

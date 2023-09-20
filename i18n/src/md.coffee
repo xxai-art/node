@@ -12,7 +12,8 @@ tranMd = cache (dir, relpath, from_lang)=>
     from_lang
   )
 
-< (dir, relpath, to_lang, from_lang)=>
+< (dir, relpath, to_lang, from_lang, from_change)=>
+  console.log relpath, from_lang, to_lang, from_change
   tran = tranMd(dir, relpath, from_lang)
   out = await tran(
     to_lang

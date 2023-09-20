@@ -9,7 +9,7 @@
   ./merge.js
   ./pick.js
   ./tranComment.js
-  ./prefix.js
+  ./psfix.js
   @xxai/cache_map:CacheMap
   @w5/xxhash3-wasm > hash128
 
@@ -30,6 +30,7 @@
     to_tran_htm = []
     to_tran_pos = []
     to_tran_prefix = []
+    to_tran_suffix = []
 
     await tranComment(
       md, code_pos_li, mget, mset
@@ -44,8 +45,9 @@
       if pre
         md[pos] = utf8d(pre)+'\n'
       else
-        [p, t] = prefix txt
-        to_tran_prefix.push p
+        [prefix, t, suffix] = psfix txt
+        to_tran_prefix.push prefix
+        to_tran_suffix.push suffix
         to_tran_htm.push (await md2htm t).trimEnd()
         to_tran_pos.push pos
         to_tran_hash.push hash
@@ -56,7 +58,7 @@
       i = htm2md i
       if p.charAt(0) == '#'
         i = TitleCase i
-      txt = p + i
+      txt = p + i + to_tran_suffix[n]
       mset to_tran_hash[n], txt
       md[to_tran_pos[n]] = txt+'\n'
       n++
