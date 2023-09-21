@@ -24,7 +24,11 @@
 
 li = loads '''
 en:
-zh: en
+zh:
+  - abc: 3
+  -
+    1234: 3
+    12: 3
 '''
 console.log li
 

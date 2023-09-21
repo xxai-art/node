@@ -31,7 +31,11 @@
 
 li = loads '''
 en:
-zh: en
+zh:
+  - abc: 3
+  -
+    1234: 3
+    12: 3
 '''
 console.log li
 
@@ -55,5 +59,5 @@ console.log li
 output :
 
 ```
-{ en: '', zh: 'en' }
+{ en: '', zh: [ 'abc: 3', { '12': '3', '1234': '3' } ] }
 ```

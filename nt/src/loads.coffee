@@ -19,7 +19,11 @@ strli = (li)=>
 list = (up, li)=>
   t = li[0][1]
   if t.startsWith '-'
-    up.push t.slice(1).trimStart()
+    next = li[1]
+    if next.length
+      up.push load next
+    else
+      up.push t.slice(1).trimStart()
   return
 
 dict = (up, li)=>
